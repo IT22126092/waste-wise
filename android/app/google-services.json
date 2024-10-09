@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826251332792",
+    "project_id": "flutter-project-892ff",
+    "storage_bucket": "flutter-project-892ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826251332792:android:a673ac81d503d0e892f84d",
+        "android_client_info": {
+          "package_name": "com.example.waste_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4UJn6uw8vv0QDkHQEZVpjBzu5CEdKKqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
