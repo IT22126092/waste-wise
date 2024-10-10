@@ -372,15 +372,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   side: const BorderSide(color: Colors.green), // Border color
                 ),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.image, // Change icon as needed
                     color: Colors.green,
                   ),
-                  const SizedBox(width: 8.0), // Spacing between icon and text
-                  const Text(
+                  SizedBox(width: 8.0), // Spacing between icon and text
+                  Text(
                     "Change or Remove Profile Picture",
                     style: TextStyle(
                       color: Colors.green,
@@ -422,15 +422,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   side: const BorderSide(color: Colors.red), // Border color
                 ),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.delete,
                     color: Colors.red,
                   ),
-                  const SizedBox(width: 8.0), // Spacing between icon and text
-                  const Text(
+                  SizedBox(width: 8.0), // Spacing between icon and text
+                  Text(
                     "Delete Account",
                     style: TextStyle(
                       color: Colors.red,

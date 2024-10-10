@@ -32,11 +32,11 @@ class _Draft_ScreenState extends State<Draft_Screen> {
         child: FloatingActionButton(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => Add_creen(),
+              builder: (context) => const Add_creen(),
             ));
           },
           backgroundColor: custom_green,
-          child: Icon(Icons.add, size: 30),
+          child: const Icon(Icons.add, size: 30),
         ),
       ),
       body: SafeArea(
@@ -61,7 +61,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
                   stream: garbageCollection.snapshots(),
                   builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (!snapshot.hasData) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                     final garbageItems = snapshot.data!.docs.map((doc) {
                       return GarbageItem.fromSnapshot(doc);
@@ -91,7 +91,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
                                 image: AssetImage(
-                                  'assets/images/${index}.jpg', // Use the image index from Firestore
+                                  'assets/images/$index.jpg', // Use the image index from Firestore
                                 ),
                                 fit: BoxFit.cover,
                               ),
@@ -99,7 +99,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
                           ),
                           title: Text(
                             garbageItem.selectedCategory,
-                            style: TextStyle(fontSize: 18, color: Colors.black),
+                            style: const TextStyle(fontSize: 18, color: Colors.black),
                           ),
                           subtitle: Text(
                               '${garbageItem.description}\nPrice: ${garbageItem.price}\nContact: ${garbageItem.contactNumber}'),
@@ -107,7 +107,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               IconButton(
-                                icon: Icon(Icons.edit, color: Colors.blue),
+                                icon: const Icon(Icons.edit, color: Colors.blue),
                                 onPressed: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>
@@ -116,7 +116,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
                                 },
                               ),
                               IconButton(
-                                icon: Icon(Icons.delete, color: Colors.red),
+                                icon: const Icon(Icons.delete, color: Colors.red),
                                 onPressed: () {
                                   _deleteGarbageItem(garbageItem.id);
                                 },
@@ -140,7 +140,7 @@ class _Draft_ScreenState extends State<Draft_Screen> {
   void _deleteGarbageItem(String id) async {
     await garbageCollection.doc(id).delete();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Garbage item deleted')),
+      const SnackBar(content: Text('Garbage item deleted')),
     );
   }
 }

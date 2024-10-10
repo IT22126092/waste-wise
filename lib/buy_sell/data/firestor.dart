@@ -29,7 +29,7 @@ class Firestore_Datasource {
       int image, // Change imageUrl to int image
       ) async {
     try {
-      var uuid = Uuid().v4(); // Generate unique ID
+      var uuid = const Uuid().v4(); // Generate unique ID
       DateTime data = DateTime.now(); // Get current time
       await _firestore
           .collection('users')

@@ -6,7 +6,7 @@ import 'package:waste_management/buy_sell/model/garbage_item.dart'; // Model con
 class Edit_Screen extends StatefulWidget {
   final GarbageItem _garbageItem;
 
-  Edit_Screen(this._garbageItem, {super.key});
+  const Edit_Screen(this._garbageItem, {super.key});
 
   @override
   State<Edit_Screen> createState() => _Edit_ScreenState();
@@ -19,10 +19,10 @@ class _Edit_ScreenState extends State<Edit_Screen> {
   TextEditingController? price;
   TextEditingController? contactNumber;
 
-  FocusNode _quantityFocus = FocusNode();
-  FocusNode _descriptionFocus = FocusNode();
-  FocusNode _priceFocus = FocusNode();
-  FocusNode _contactFocus = FocusNode();
+  final FocusNode _quantityFocus = FocusNode();
+  final FocusNode _descriptionFocus = FocusNode();
+  final FocusNode _priceFocus = FocusNode();
+  final FocusNode _contactFocus = FocusNode();
   int indexx = 0;
 
   final List<String> categories = [
@@ -55,17 +55,17 @@ class _Edit_ScreenState extends State<Edit_Screen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               categoryDropdown(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               quantityWidgets(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               descriptionWidget(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               priceWidgets(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               contactWidgets(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               imagess(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               button(),
             ],
           ),
@@ -81,7 +81,7 @@ class _Edit_ScreenState extends State<Edit_Screen> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: custom_green,
-            minimumSize: Size(170, 48),
+            minimumSize: const Size(170, 48),
           ),
           onPressed: () async {
             // Update the garbage item in Firebase.
@@ -96,24 +96,24 @@ class _Edit_ScreenState extends State<Edit_Screen> {
             );
             Navigator.pop(context);
           },
-          child: Text('Update Item'),
+          child: const Text('Update Item'),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
-            minimumSize: Size(170, 48),
+            minimumSize: const Size(170, 48),
           ),
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
       ],
     );
   }
 
   Container imagess() {
-    return Container(
+    return SizedBox(
       height: 180,
       child: ListView.builder(
         itemCount: 4,
@@ -136,10 +136,10 @@ class _Edit_ScreenState extends State<Edit_Screen> {
                   ),
                 ),
                 width: 140,
-                margin: EdgeInsets.all(8),
+                margin: const EdgeInsets.all(8),
                 child: Column(
                   children: [
-                    Image.asset('assets/images/${index}.jpg'),
+                    Image.asset('assets/images/$index.jpg'),
                   ],
                 ),
               ),
@@ -167,11 +167,11 @@ class _Edit_ScreenState extends State<Edit_Screen> {
             );
           }).toList(),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             hintText: 'Select Category',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xffc5c5c5),
                 width: 2.0,
               ),
@@ -206,13 +206,13 @@ class _Edit_ScreenState extends State<Edit_Screen> {
         child: TextField(
           controller: quantity,
           focusNode: _quantityFocus,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: const TextStyle(fontSize: 18, color: Colors.black),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             hintText: 'Quantity',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xffc5c5c5),
                 width: 2.0,
               ),
@@ -242,13 +242,13 @@ class _Edit_ScreenState extends State<Edit_Screen> {
           maxLines: 3,
           controller: description,
           focusNode: _descriptionFocus,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: const TextStyle(fontSize: 18, color: Colors.black),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             hintText: 'Description',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xffc5c5c5),
                 width: 2.0,
               ),
@@ -278,13 +278,13 @@ class _Edit_ScreenState extends State<Edit_Screen> {
           controller: price,
           focusNode: _priceFocus,
           keyboardType: TextInputType.number,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: const TextStyle(fontSize: 18, color: Colors.black),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             hintText: 'Price',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xffc5c5c5),
                 width: 2.0,
               ),
@@ -314,13 +314,13 @@ class _Edit_ScreenState extends State<Edit_Screen> {
           controller: contactNumber,
           focusNode: _contactFocus,
           keyboardType: TextInputType.phone,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: const TextStyle(fontSize: 18, color: Colors.black),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             hintText: 'Contact Number',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Color(0xffc5c5c5),
                 width: 2.0,
               ),

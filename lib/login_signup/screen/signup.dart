@@ -115,7 +115,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 Image.asset('assets/images/signup.jpg', height: height / 4),
                 const SizedBox(height: 20),
-                Text(
+                const Text(
                   'Create an Account',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,

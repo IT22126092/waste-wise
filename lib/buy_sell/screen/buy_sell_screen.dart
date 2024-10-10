@@ -3,11 +3,13 @@ import 'package:waste_management/buy_sell/screen/Buy_screen.dart';
 import 'package:waste_management/buy_sell/screen/Sell_Screen.dart';
 
 class Home_Screen extends StatelessWidget {
+  const Home_Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Garbage Management'),
+        title: const Text('Garbage Management'),
         centerTitle: true,
         backgroundColor: Colors.green,
       ),
@@ -27,14 +29,14 @@ class Home_Screen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green, // Background color
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     shape: RoundedRectangleBorder(
                       borderRadius:
                       BorderRadius.circular(10), // Rounded corners
@@ -44,10 +46,10 @@ class Home_Screen extends StatelessWidget {
                     // Navigate to "Buy" screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Buy_Screen()),
+                      MaterialPageRoute(builder: (context) => const Buy_Screen()),
                     );
                   },
-                  child: Column(
+                  child: const Column(
                     children: [
                       Icon(Icons.shopping_cart, size: 30),
                       SizedBox(height: 10),
@@ -58,7 +60,7 @@ class Home_Screen extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue, // Background color
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -67,10 +69,10 @@ class Home_Screen extends StatelessWidget {
                     // Navigate to "Sell" screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Sell_Screen()),
+                      MaterialPageRoute(builder: (context) => const Sell_Screen()),
                     );
                   },
-                  child: Column(
+                  child: const Column(
                     children: [
                       Icon(Icons.sell, size: 30),
                       SizedBox(height: 10),
@@ -80,7 +82,7 @@ class Home_Screen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Text(
               'Manage and recycle garbage efficiently!',
               style: TextStyle(

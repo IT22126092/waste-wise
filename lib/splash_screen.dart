@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:waste_management/onboarding_screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -119,9 +119,9 @@ class _SplashScreenState extends State<SplashScreen>
                 // Sliding in "WasteWise" text
                 SlideTransition(
                   position: _slideAnimation,
-                  child: Text(
+                  child: const Text(
                     'WasteWise',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 32, // Increased font size
                       fontWeight: FontWeight.bold,
                       color: Color(0xff4CAF50), // Green color for the text

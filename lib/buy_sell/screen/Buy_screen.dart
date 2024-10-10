@@ -35,16 +35,16 @@ class _Buy_ScreenState extends State<Buy_Screen> {
     return Scaffold(
       backgroundColor: backgroundColors,
       appBar: AppBar(
-        title: Text('Available Garbage Items'),
+        title: const Text('Available Garbage Items'),
         backgroundColor: custom_green,
         actions: [
           DropdownButton<String>(
             value: selectedCategory,
-            icon: Icon(Icons.filter_list, color: Colors.white),
+            icon: const Icon(Icons.filter_list, color: Colors.white),
             items: categories.map((String category) {
               return DropdownMenuItem<String>(
                 value: category,
-                child: Text(category, style: TextStyle(color: Colors.black)),
+                child: Text(category, style: const TextStyle(color: Colors.black)),
               );
             }).toList(),
             onChanged: (String? newValue) {
@@ -60,7 +60,7 @@ class _Buy_ScreenState extends State<Buy_Screen> {
           stream: garbageCollection.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (!snapshot.hasData) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             final garbageItems = snapshot.data!.docs.map((doc) {
               return GarbageItem.fromSnapshot(doc);
@@ -97,7 +97,7 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                       borderRadius: BorderRadius.circular(8),
                       image: DecorationImage(
                         image: AssetImage(
-                          'assets/images/${index}.jpg', // Use the image index from Firestore
+                          'assets/images/$index.jpg', // Use the image index from Firestore
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -105,13 +105,13 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                   ),
                   title: Text(
                     garbageItem.selectedCategory,
-                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    style: const TextStyle(fontSize: 18, color: Colors.black),
                   ),
                   subtitle: Text(
                     '${garbageItem.description}\nQuantity: ${garbageItem.quantity}\nPrice: ${garbageItem.price}\nContact: ${garbageItem.contactNumber}',
                   ),
                   trailing: IconButton(
-                    icon: Icon(Icons.remove_red_eye, color: Colors.blue),
+                    icon: const Icon(Icons.remove_red_eye, color: Colors.blue),
                     onPressed: () {
                       // Optionally, add functionality to show more details about the item
                       showDialog(
@@ -128,13 +128,13 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                                   borderRadius: BorderRadius.circular(8),
                                   image: DecorationImage(
                                     image: AssetImage(
-                                      'assets/images/${index}.jpg', // Use the image index from Firestore
+                                      'assets/images/$index.jpg', // Use the image index from Firestore
                                     ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 '${garbageItem.description}\nQuantity: ${garbageItem.quantity}\nPrice: ${garbageItem.price}\nContact: ${garbageItem.contactNumber}',
                               ),
@@ -143,7 +143,7 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.of(context).pop(),
-                              child: Text('Close'),
+                              child: const Text('Close'),
                             ),
                           ],
                         ),

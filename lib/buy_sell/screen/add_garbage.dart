@@ -80,7 +80,7 @@ class _Add_creenState extends State<Add_creen> {
   }
 
   Container imagess() {
-    return Container(
+    return SizedBox(
       height: 180,
       child: ListView.builder(
         itemCount: 6, // You can customize the number of images available
@@ -103,11 +103,11 @@ class _Add_creenState extends State<Add_creen> {
                   ),
                 ),
                 width: 140,
-                margin: EdgeInsets.all(8),
+                margin: const EdgeInsets.all(8),
                 child: Column(
                   children: [
                     Image.asset(
-                        'assets/images/${index}.jpg'), // Display image from assets folder
+                        'assets/images/$index.jpg'), // Display image from assets folder
                   ],
                 ),
               ),

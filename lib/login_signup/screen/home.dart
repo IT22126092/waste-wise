@@ -5,7 +5,6 @@ import 'package:video_player/video_player.dart';
 import '../../buy_sell/screen/buy_sell_screen.dart';
 import '../../campaigns/campaigns_screen.dart';
 import '../../reminders/reminders_screen.dart';
-import 'login.dart';
 import 'package:waste_management/profile.dart';
 import 'package:waste_management/recycling_tips/waste_categories.dart';
 
@@ -206,11 +205,11 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
 
                     // App explanation before video section
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
                         "This app helps you manage waste effectively by providing tips on recycling, reminders for waste collection, and resources for buying and selling recycled materials. Let's work together to create a cleaner environment!",
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -358,7 +357,7 @@ class _HomePageState extends State<HomePage> {
       itemBuilder: (context, index) {
         final component = components[index];
         return GestureDetector(
-          onTap: component['onTap'] != null ? component['onTap'] : null,
+          onTap: component['onTap'],
           child: Card(
             elevation: 3,
             child: Column(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WasteCategoriesScreen extends StatefulWidget {
-  const WasteCategoriesScreen({Key? key}) : super(key: key);
+  const WasteCategoriesScreen({super.key});
 
   @override
   _WasteCategoriesScreenState createState() => _WasteCategoriesScreenState();
@@ -65,12 +65,12 @@ class _WasteCategoriesScreenState extends State<WasteCategoriesScreen> {
                 onPressed: () {
                   // Handle lookup item by photo functionality
                 },
-                child: const Text('Lookup Item By Photo'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   textStyle: const TextStyle(fontSize: 16),
                 ),
+                child: const Text('Lookup Item By Photo'),
               ),
               const SizedBox(height: 32),
               GridView.builder(
@@ -94,7 +94,7 @@ class _WasteCategoriesScreenState extends State<WasteCategoriesScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.category,
                           size: 48,
                           color: Colors.white,

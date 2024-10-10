@@ -4,7 +4,7 @@ import 'package:waste_management/onboarding_screens/onboarding_contents.dart';
 import 'package:waste_management/login_signup/screen/login.dart'; // Import the login screen
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -172,8 +172,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                             builder: (context) => const LoginScreen(),
                           ),
                         );
-                      },
-                      child: const Text("START", style: TextStyle(color: Colors.green)), // Text color set to green
+                      }, // Text color set to green
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
@@ -186,6 +185,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                           fontSize: (width <= 550) ? 13 : 17,
                         ),
                       ),
+                      child: const Text("START", style: TextStyle(color: Colors.green)),
                     ),
                   )
                       : Padding(
@@ -201,10 +201,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                                 curve: Curves.easeIn,
                               );
                             },
-                            child: const Text(
-                              "GO BACK",
-                              style: TextStyle(color: Colors.black),
-                            ),
                             style: TextButton.styleFrom(
                               elevation: 0,
                               textStyle: TextStyle(
@@ -212,21 +208,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                                 fontSize: (width <= 550) ? 13 : 17,
                               ),
                             ),
+                            child: const Text(
+                              "GO BACK",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
                         TextButton(
                           onPressed: () {
                             _controller.jumpToPage(2);
                           },
-                          child: const Text(
-                            "SKIP",
-                            style: TextStyle(color: Colors.black),
-                          ),
                           style: TextButton.styleFrom(
                             elevation: 0,
                             textStyle: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: (width <= 550) ? 13 : 17,
                             ),
+                          ),
+                          child: const Text(
+                            "SKIP",
+                            style: TextStyle(color: Colors.black),
                           ),
                         ),
                         ElevatedButton(
@@ -235,8 +235,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                               duration: const Duration(milliseconds: 200),
                               curve: Curves.easeIn,
                             );
-                          },
-                          child: const Text("NEXT", style: TextStyle(color: Colors.green)), // Text color set to green
+                          }, // Text color set to green
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
                             shape: RoundedRectangleBorder(
@@ -250,6 +249,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
                               fontSize: (width <= 550) ? 13 : 17,
                             ),
                           ),
+                          child: const Text("NEXT", style: TextStyle(color: Colors.green)),
                         ),
                       ],
                     ),
